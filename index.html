@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Miss Sharma 💖🎶</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+/* 🌌 Galaxy Background */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  background:
+    radial-gradient(circle at 20% 30%, #2b1055, transparent 40%),
+    radial-gradient(circle at 80% 70%, #7597de, transparent 40%),
+    radial-gradient(circle at center, #0f051d, #000010 70%);
+}
+
+/* 💖 Floating hearts & music symbols */
+.float {
+  position: fixed;
+  bottom: -40px;
+  font-size: 28px;
+  animation: floatUp 7s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* 🎁 Card */
+.card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255,255,255,0.12);
+  border-radius: 22px;
+  padding: 30px 20px;
+  margin: 60px 20px;
+  box-shadow: 0 0 30px rgba(255,105,180,0.7);
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 6px;
+  text-shadow: 0 0 15px #ff69b4;
+}
+
+h2 {
+  color: #ffb6ff;
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* ▶ Play Button */
+button {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(45deg, #ff4e8a, #ffb347);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff69b4;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 💖 Floating icons -->
+<div class="float" style="left:10%; animation-delay:0s;">💖</div>
+<div class="float" style="left:25%; animation-delay:2s;">🎵</div>
+<div class="float" style="left:45%; animation-delay:4s;">🎶</div>
+<div class="float" style="left:65%; animation-delay:1s;">💞</div>
+<div class="float" style="left:85%; animation-delay:3s;">✨</div>
+
+<div class="card">
+  <!-- 🕉️ Background image -->
+  <img src="file_000000004e9872069ead8e38bfaebf9d.png"
+       style="width:220px; opacity:0.35; margin-bottom:12px;
+              filter: drop-shadow(0 0 20px #ff69b4);">
+
+  <h1>🎶 Just for You 🎶</h1>
+  <h2>Miss Sharma 💖</h2>
+
+  <p>
+    Dosti se shuru hua…<br>
+    aur aaj is gaane tak ❤️<br>
+    Yeh sirf ek song nahi,<br>
+    ek feeling hai — tumhare liye.<br><br>
+    <b>HAPPY BIRTHDAY SHERNI 🎉🎉</b>
+  </p>
+
+  <!-- 🎵 Audio -->
+  <audio id="song" preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <button onclick="playSong()">▶ Play Song</button>
+</div>
+
+<script>
+function playSong() {
+  const audio = document.getElementById("song");
+  audio.volume = 1.0;
+  audio.play().catch(() => {
+    alert("Please tap again to play 🎵");
+  });
+}
+</script>
+
+</body>
+</html>
