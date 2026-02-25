@@ -66,6 +66,8 @@ p {
 
 /* ▶ Play Button */
 button {
+  position: relative;
+  z-index: 20;
   margin-top: 20px;
   font-size: 18px;
   padding: 12px 30px;
@@ -110,17 +112,29 @@ button {
     <source src="song.mp3" type="audio/mpeg">
   </audio>
 
-  <button onclick="playSong()">▶ Play Song</button>
+  <button id="playBtn">▶ Play Song</button>
 </div>
 
 <script>
+// Select audio & button
+const audio = document.getElementById("song");
+const btn = document.getElementById("playBtn");
+
+// Function to play song and hide button
 function playSong() {
-  const audio = document.getElementById("song");
   audio.volume = 1.0;
   audio.play().catch(() => {
     alert("Please tap again to play 🎵");
   });
+  btn.style.display = "none"; // hide button after first click
 }
+
+// Mobile auto-play trick: tap anywhere once
+document.body.addEventListener("click", function firstTap() {
+  audio.play().catch(() => {});
+  document.body.removeEventListener("click", firstTap);
+});
+btn.addEventListener("click", playSong);
 </script>
 
 </body>
